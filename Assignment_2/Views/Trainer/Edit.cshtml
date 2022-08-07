@@ -1,0 +1,34 @@
+﻿@model Assignment_2.Models.Trainer
+
+@using Assignment_2.Models
+
+<h1>Edit Trainer</h1>
+
+<form method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.FirstName, "", new { title = "Boom", id = "boomer", @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Type the Salary" } })
+        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Subject)
+        @Html.EditorFor(m => m.Subject, new { htmlAttributes = new { @class = "form-control", placeholder = "Type the Age" } })
+        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+    </div>
+
+
+    <input class="btn btn-primary" type="submit" value="Update" />
+    <input class="btn btn-success" type="reset" value="Clear" />
+</form>
+
+
